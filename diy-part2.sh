@@ -11,4 +11,7 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/172.16.18.1/g' package/base-files/files/bin/config_generate
+
+#Add DNS
+sed -i '/$netm/a set network.$1.dns=\'"'"'114.114.114.114 114.114.115.115\'"'"'' package/base-files/files/bin/config_generate
