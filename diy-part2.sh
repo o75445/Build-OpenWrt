@@ -21,5 +21,8 @@ sed -i 's/OpenWrt/360T7/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i 's/none/psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/encryption/a \\tset wireless.default_radio${devidx}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
+#set root password
+sed -i 's/root.*/root/' package/base-files/files/etc/shadow
+
 #image Size
 #sed -i 's/tplink-4mlzma/tplink-16mlzma/g' target/linux/ath79/image/tiny-tp-link.mk
