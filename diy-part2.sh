@@ -11,10 +11,15 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/172.16.18.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
 
-#Add DNS
-sed -i '/$netm/a set network.$1.dns=\'"'"'114.114.114.114 114.114.115.115\'"'"'' package/base-files/files/bin/config_generate
+#Add LAN DNS
+sed -i '/$netm/a \\tset network.$1.dns=\'"'"'223.5.5.5 223.6.6.6\'"'"'' package/base-files/files/bin/config_generate
+
+#ssid
+sed -i 's/OpenWrt/360T7/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/none/psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/encryption/a \\tset wireless.default_radio${devidx}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 #image Size
 #sed -i 's/tplink-4mlzma/tplink-16mlzma/g' target/linux/ath79/image/tiny-tp-link.mk
