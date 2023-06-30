@@ -24,5 +24,8 @@ sed -i '/encryption/a \\t\t\tset wireless.default_radio${devidx}.key=12345678' p
 #set root password
 sed -i 's/root.*/root:$1$h04sEe8A$kYjJPkQdnyixuiZY3zf2D.:19484:0:99999:7:::/' package/base-files/files/etc/shadow
 
+#theme
+sed -i 's/+luci-theme-bootstrap//g' feeds/luci/collections/luci/Makefile
+
 #image Size
 #sed -i 's/tplink-4mlzma/tplink-16mlzma/g' target/linux/ath79/image/tiny-tp-link.mk
