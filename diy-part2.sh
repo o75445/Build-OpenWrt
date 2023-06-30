@@ -18,7 +18,7 @@ sed -i '/$netm/a \\t\t\t\tset network.$1.dns=\'"'"'223.5.5.5 223.6.6.6\'"'"'' pa
 
 #ssid
 sed -i 's/OpenWrt/360T7/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i 's/none/psk2+ccmp/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/none/psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/encryption/a \\tset wireless.default_radio${devidx}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 #set root password
