@@ -14,7 +14,7 @@
 sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
 
 #Add LAN DNS
-sed -i '/$netm/a \\tset network.$1.dns=\'"'"'223.5.5.5 223.6.6.6\'"'"'' package/base-files/files/bin/config_generate
+sed -i '/$netm/a \\t\t\t\tset network.$1.dns=\'"'"'223.5.5.5 223.6.6.6\'"'"'' package/base-files/files/bin/config_generate
 
 #ssid
 sed -i 's/OpenWrt/360T7/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
